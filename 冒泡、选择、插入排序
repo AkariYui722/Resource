@@ -1,0 +1,54 @@
+//冒泡排序
+for(int i=0;i<array.length;i++){
+  for(int j=0;j<array.length-i-1;j++){
+    if(array[j]>array[j+1]){
+      int temp=a[j];
+      a[j]=a[j+1];
+      a[j+1]=temp;
+    }
+  }
+}
+retrun array;
+
+//选择排序
+for(int i=0;i<array.length;i++){
+  int minIndex=i;//最小/大值位置标记
+  for(int j=i;j<array.length;j++){
+    if(array[j]<array[minIndex]){
+      minIndex=j;
+    }
+  }
+  if(minIndex!=i){
+    int temp=array[i];
+    array[i]=array[minIndex];
+    array[minIndex]=temp;
+  }
+}
+return array;
+
+//插入排序
+for(int i=array.length-1;i>=0;i--){
+  int temp=array[i];
+  int j;
+  for(j=i-1;j>=0;j--){
+    if(array[j]>array[i]){
+      array[j+1]=array[j]
+    }else{
+      break;
+    }
+  }
+  array[j+1]=temp;
+}
+//插入的另一种
+if(array.length > 0){			
+			for(int i = 0 ;i<array.length - 1;i++){
+				int current = array[i+1];
+				int index = i;
+				while(index >= 0 && current < array[index]){
+					array[index + 1] = array[index]; 
+					index--;
+				}
+				array[index+1] = current;
+			}
+			
+		}
