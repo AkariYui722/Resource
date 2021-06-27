@@ -1,0 +1,15 @@
+int len=array.length;
+int gap=len/2;
+while(gap>0){
+//条件变化为++是多个子表同时处理，如果想一次性处理一个子表改为+增量
+  for(int i=gap;i<len;i++){
+    int temp=array[i];
+    if(i-gap>0 && array[i]<array[i-gap]){
+      for(int j=i-gap;j>=0 && temp<array[j];j-=gap){
+        array[j+gap]=array[j];
+      }
+      array[j+gap]=temp;
+    }
+  }
+  gap=gap/2;
+}
